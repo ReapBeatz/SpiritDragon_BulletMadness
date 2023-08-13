@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - RotateTurret
+  - playerSpawnPos
+  - ElecTower
+  - mechBoss
   layers:
   - Default
   - TransparentFX
@@ -11,12 +15,12 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - EnemyBullet
+  - Enemy
+  - PlayerBullet
+  - Player
+  - RoomBounds
+  - Pickups
   - 
   - 
   - 
@@ -38,6 +42,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 448375629
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 1115387555
     locked: 0
