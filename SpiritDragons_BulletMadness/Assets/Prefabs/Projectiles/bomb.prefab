@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3285652260442981195}
   - component: {fileID: 4991741706730864399}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firePos (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8858628479608163272}
   - component: {fileID: 2178792949165571167}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firePos (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1260190821465537151}
   - component: {fileID: 221942462885221729}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firePos (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 595912483681797947}
   - component: {fileID: 4142490537255434726}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firePos (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3704125700858395756}
   - component: {fileID: 8162706919643389588}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firePos (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7976733950398431737}
   - component: {fileID: 3972409670875703245}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firePos (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: -8739431683818811682}
   - component: {fileID: 4419262177103751623}
   - component: {fileID: 3792851676748936032}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,8 +374,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1115387555
-  m_SortingLayer: 1
+  m_SortingLayerID: 678273239
+  m_SortingLayer: 8
   m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -478,7 +478,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4013946713365794655}
   - component: {fileID: 4201246811157106811}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firePos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -528,7 +528,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2029604551841347193}
   - component: {fileID: 5181938260827387607}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firePos (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -578,7 +578,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6065845997870689377}
   - component: {fileID: 1707273241824484343}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firePos (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -628,7 +628,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5922770543866767152}
   - component: {fileID: 2243579305005249682}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firePos (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -678,7 +678,7 @@ GameObject:
   m_Component:
   - component: {fileID: 107898511655664992}
   - component: {fileID: 8851464346609477389}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firePos (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -729,7 +729,7 @@ GameObject:
   - component: {fileID: 1197725979957303918}
   - component: {fileID: 6661166893264704010}
   - component: {fileID: 6322839394327823262}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spreadFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -834,7 +834,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9045237555013659155}
   - component: {fileID: 7349602187250368620}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firePos (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -884,7 +884,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5124195138277640767}
   - component: {fileID: 7844819006015989121}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firePos (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -934,7 +934,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7564021651408189403}
   - component: {fileID: 1635169110142876282}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firePos (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -984,7 +984,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5513278890386124450}
   - component: {fileID: 4954216301519825731}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firePos (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1034,7 +1034,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1341590272690899483}
   - component: {fileID: 3506059443239224972}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firePos (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

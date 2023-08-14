@@ -44,10 +44,93 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c190778487683b0499f92e62aeec2f4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerScript: {fileID: 0}
   bulletPrefab: {fileID: 2856461748329167953, guid: 164f5599a1db9b04daaf590c06e4d721, type: 3}
   fireRate: 0.75
+  fireDelay: 0
   bulletForce: 20
   currTimer: 0
+--- !u!1 &3308348690283158503
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1208341785530277915}
+  - component: {fileID: 4386440439092175597}
+  - component: {fileID: 6133783392139694133}
+  m_Layer: 13
+  m_Name: DetectionTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1208341785530277915
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3308348690283158503}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.21133284, z: 0}
+  m_LocalScale: {x: 2.5641026, y: 1.5661892, z: 1.5661892}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8295648766826120949}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &4386440439092175597
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3308348690283158503}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.21133333}
+  serializedVersion: 2
+  m_Radius: 15
+--- !u!114 &6133783392139694133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3308348690283158503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ee4c556cb058ac4b9c8500726529d02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inRange: 0
 --- !u!1 &3518588814437933349
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,8 +175,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c190778487683b0499f92e62aeec2f4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerScript: {fileID: 0}
   bulletPrefab: {fileID: 2856461748329167953, guid: 164f5599a1db9b04daaf590c06e4d721, type: 3}
   fireRate: 0.75
+  fireDelay: 0
   bulletForce: 20
   currTimer: 0
 --- !u!1 &8180291342988704275
@@ -109,7 +194,7 @@ GameObject:
   - component: {fileID: 7858977606952530524}
   - component: {fileID: 2630368116594241548}
   - component: {fileID: 3231610334658567285}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: BurstEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +208,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8180291342988704275}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.39, y: 0.63849247, z: 0.63849247}
   m_ConstrainProportionsScale: 0
@@ -131,8 +216,9 @@ Transform:
   - {fileID: 9085242276570680592}
   - {fileID: 7615740935410312767}
   - {fileID: 3275033025632294819}
+  - {fileID: 1208341785530277915}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4276444551618922101
 SpriteRenderer:
@@ -172,9 +258,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: 678273239
+  m_SortingLayer: 8
+  m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
   m_Color: {r: 1, g: 0.55056304, b: 0, a: 1}
   m_FlipX: 0
@@ -199,11 +285,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPos: {fileID: 0}
+  coin: {fileID: 4221328475557194029, guid: ce3037e5ddd8d064f979c1fa73206dfb, type: 3}
+  health: {fileID: 885794176539928703, guid: 930c04e3b32c7be4f963c101d2878fd6, type: 3}
   model: {fileID: 4276444551618922101}
   bF:
   - {fileID: 8338419116291391892}
   - {fileID: 1843738758704821566}
   - {fileID: 7359710219564714869}
+  colliderGO: {fileID: 6133783392139694133}
   hp: 10
   speed: 3
   stoppingDistance: 5
@@ -327,7 +416,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c190778487683b0499f92e62aeec2f4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerScript: {fileID: 0}
   bulletPrefab: {fileID: 2856461748329167953, guid: 164f5599a1db9b04daaf590c06e4d721, type: 3}
   fireRate: 0.75
+  fireDelay: 0
   bulletForce: 20
   currTimer: 0

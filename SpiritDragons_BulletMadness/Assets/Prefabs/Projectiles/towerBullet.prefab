@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -8739431683818811682}
   - component: {fileID: 4419262177103751623}
   - component: {fileID: 6365415865084046805}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: towerBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1115387555
-  m_SortingLayer: 1
+  m_SortingLayerID: 678273239
+  m_SortingLayer: 8
   m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

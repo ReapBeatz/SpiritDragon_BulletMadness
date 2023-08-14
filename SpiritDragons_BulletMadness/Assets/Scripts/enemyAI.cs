@@ -1,8 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
-using Unity.VisualScripting;
-using UnityEditor.SceneTemplate;
 using UnityEngine;
 
 public class enemyAI : MonoBehaviour, IDamage
@@ -13,11 +10,13 @@ public class enemyAI : MonoBehaviour, IDamage
     Rigidbody2D rb;
     [SerializeField] SpriteRenderer model;
     [SerializeField] bulletFire[] bF;
+    [SerializeField] detection colliderGO;
     
     [SerializeField] int hp;
     [SerializeField] float speed;
     [SerializeField] float stoppingDistance;
     [SerializeField] float retreatDistance;
+
     Color origColor;
     // Start is called before the first frame update
     void Start()
@@ -31,22 +30,25 @@ public class enemyAI : MonoBehaviour, IDamage
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector2.Distance(transform.position, playerPos.transform.position);
-        Debug.Log(distance);
-        if (distance > stoppingDistance)
+        if (colliderGO.inRange)
         {
-            transform.position = Vector2.MoveTowards(transform.position, playerPos.transform.position, speed * Time.deltaTime);
-            shoot();
-        }
-        else if(distance < stoppingDistance && distance > retreatDistance) 
-        {
-            transform.position = this.transform.position;
-            shoot();
-        }
-        else if(distance < retreatDistance)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, playerPos.transform.position, -speed * Time.deltaTime);
-            shoot();
+            float distance = Vector2.Distance(transform.position, playerPos.transform.position);
+            Debug.Log(distance);
+            if (distance > stoppingDistance)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, playerPos.transform.position, speed * Time.deltaTime);
+                shoot();
+            }
+            else if (distance < stoppingDistance && distance > retreatDistance)
+            {
+                transform.position = this.transform.position;
+                shoot();
+            }
+            else if (distance < retreatDistance)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, playerPos.transform.position, -speed * Time.deltaTime);
+                shoot();
+            }
         }
     }
 

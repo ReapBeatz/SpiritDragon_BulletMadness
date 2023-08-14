@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Xml.Serialization;
-using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class playerMovement : MonoBehaviour , IDamage

@@ -10,6 +10,7 @@ public class turretAI : MonoBehaviour , IDamage
     [SerializeField] GameObject health;
     [SerializeField] SpriteRenderer model;
     [SerializeField] bulletFire[] bF;
+    [SerializeField] detection colliderGO;
 
     [SerializeField] int hp;
     Color origColor;
@@ -40,13 +41,16 @@ public class turretAI : MonoBehaviour , IDamage
 
     void shoot()
     {
-        foreach (var b in bF)
+        if (colliderGO.inRange)
         {
-            b.currTimer += Time.deltaTime;
-            if (b.currTimer > b.fireRate)
+            foreach (var b in bF)
             {
-                b.currTimer = 0;
-                b.Shoot();
+                b.currTimer += Time.deltaTime;
+                if (b.currTimer > b.fireRate)
+                {
+                    b.currTimer = 0;
+                    b.Shoot();
+                }
             }
         }
     }

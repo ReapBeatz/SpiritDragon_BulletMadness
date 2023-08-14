@@ -10,6 +10,7 @@ public class seekerTurret : MonoBehaviour, IDamage
     [SerializeField] SpriteRenderer model;
     [SerializeField] GameObject seeker;
     [SerializeField] float launchTimer = 5;
+    [SerializeField] GameObject colliderGO;
     public float currTimer;
 
     [SerializeField] int hp;

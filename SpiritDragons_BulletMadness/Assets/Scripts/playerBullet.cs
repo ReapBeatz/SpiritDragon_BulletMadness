@@ -16,7 +16,8 @@ public class playerBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        IDamage damageable = collision.GetComponent<IDamage>();
+        Debug.Log("Hit");
+        IDamage damageable = collision.gameObject.GetComponent<IDamage>();
         if (damageable != null)
         {
             damageable.takeDamage(damage);
@@ -25,6 +26,7 @@ public class playerBullet : MonoBehaviour
         else
         {
             Destroy(gameObject);
+
         }
     }
 }

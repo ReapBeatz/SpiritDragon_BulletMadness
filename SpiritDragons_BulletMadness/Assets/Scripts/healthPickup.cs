@@ -26,5 +26,6 @@ public class healthPickup : MonoBehaviour, IPickUp
         {
             playerScript.hp = playerScript.hpOrig;
         }
+        playerScript.updatePlayerUI();
     }
 }
