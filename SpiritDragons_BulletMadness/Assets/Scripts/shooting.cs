@@ -9,7 +9,7 @@ public class shooting : MonoBehaviour
     [SerializeField] playerMovement playerScript;
 
     [SerializeField] float bulletForce = 20f;
-    [SerializeField] float fireRate;
+    public float fireRate;
     float currTime;
     // Update is called once per frame
     void Update()

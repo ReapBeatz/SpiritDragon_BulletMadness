@@ -25,6 +25,7 @@ public class enemyAI : MonoBehaviour, IDamage
         rb = GetComponent<Rigidbody2D>();
         playerPos = GameObject.FindGameObjectWithTag("Player");
         origColor = model.material.color;
+        gameManager.instance.updateGameGoal(1);
     }
 
     // Update is called once per frame
@@ -84,6 +85,7 @@ public class enemyAI : MonoBehaviour, IDamage
                     dropHealth();
                     break;
             }
+            gameManager.instance.updateGameGoal(-1);
             Destroy(gameObject);
         }
         else

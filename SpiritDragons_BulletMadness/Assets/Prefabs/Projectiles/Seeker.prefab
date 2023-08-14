@@ -116,7 +116,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -138,6 +138,8 @@ MonoBehaviour:
   rotateSpeed: 200
   damage: 5
   launchTimer: 1
+  destroyTimer: 4
+  currTimer: 0
 --- !u!50 &2290627060216284699
 Rigidbody2D:
   serializedVersion: 4

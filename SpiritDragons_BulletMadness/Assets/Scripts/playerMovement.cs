@@ -16,7 +16,8 @@ public class playerMovement : MonoBehaviour , IDamage
 
     float activeMoveSpeed;
     [SerializeField] float dashSpeed;
-    [SerializeField] float dashLength = .5f, dashCD = 1f;
+    public float dashLength = .5f;
+    [SerializeField] float dashCD = 1f;
     public float dashTimer;
     public int hpOrig;
     float dashCountCD;
@@ -30,6 +31,7 @@ public class playerMovement : MonoBehaviour , IDamage
         pc = GetComponent<PolygonCollider2D>();
         origColor = model.material.color;
         hpOrig = hp;
+        updatePlayerUI();
     }
     // Update is called once per frame
     void Update()
@@ -42,13 +44,13 @@ public class playerMovement : MonoBehaviour , IDamage
 
             mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Fire2"))
             {
                 if (dashCountCD <= 0 && dashTimer <= 0)
                 {
                     activeMoveSpeed = dashSpeed;
                     dashTimer = dashLength;
-                    pc.enabled = false;
+                    gameObject.layer = LayerMask.NameToLayer("Invulnerable");
                     model.material.color = Color.cyan;
                 }
             }
@@ -60,7 +62,7 @@ public class playerMovement : MonoBehaviour , IDamage
                 {
                     activeMoveSpeed = moveSpeed;
                     dashCountCD = dashCD;
-                    pc.enabled = true;
+                    gameObject.layer = LayerMask.NameToLayer("Player");
                     model.material.color = origColor;
                 }
             }
@@ -75,6 +77,8 @@ public class playerMovement : MonoBehaviour , IDamage
             if (Input.GetKeyDown(KeyCode.R))
             {
                 spawnPlayer();
+                gameManager.instance.activeMenu.SetActive(false);
+                gameManager.instance.activeMenu = null;
             }
             movement.x = 0;
             movement.y = 0;
@@ -86,18 +90,25 @@ public class playerMovement : MonoBehaviour , IDamage
         hp -= dmgAmount;
         StartCoroutine(dmgInvul());
         StartCoroutine(gameManager.instance.playerFlashDamage());
+        updatePlayerUI();
         if (hp <= 0)
         {
             gameManager.instance.youLose();
         }
     }
 
+    public void updatePlayerUI()
+    {
+        gameManager.instance.playerHPBar.fillAmount = (float)hp / hpOrig;
+        gameManager.instance.moneyText.text = money.ToString("F0");
+    }
+
     IEnumerator dmgInvul()
     {
         model.material.color = Color.green;
-        pc.enabled = false;
+        gameObject.layer = LayerMask.NameToLayer("Invulnerable");
         yield return new WaitForSeconds(1);
-        pc.enabled = true;
+        gameObject.layer = LayerMask.NameToLayer("Player");
         model.material.color = origColor;
     }
 

@@ -19,6 +19,7 @@ public class seekerTurret : MonoBehaviour, IDamage
     {
         rb = GetComponent<Rigidbody2D>();
         origColor = model.material.color;
+        gameManager.instance.updateGameGoal(1);
     }
 
     // Update is called once per frame
@@ -52,6 +53,7 @@ public class seekerTurret : MonoBehaviour, IDamage
                     dropHealth();
                     break;
             }
+            gameManager.instance.updateGameGoal(-1);
             Destroy(gameObject);
         }
         else

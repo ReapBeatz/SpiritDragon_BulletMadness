@@ -5,6 +5,7 @@ using UnityEngine;
 public class moeenyPickup : MonoBehaviour, IPickUp
 {
     [SerializeField] playerMovement playerScript;
+    [SerializeField] int amount;
     // Start is called before the first frame update
     private void Start()
     {
@@ -21,6 +22,7 @@ public class moeenyPickup : MonoBehaviour, IPickUp
 
     public void pickup()
     {
-        playerScript.money += 50;
+        playerScript.money += amount;
+        playerScript.updatePlayerUI();
     }
 }
