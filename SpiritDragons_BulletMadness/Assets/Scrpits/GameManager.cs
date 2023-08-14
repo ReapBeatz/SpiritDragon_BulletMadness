@@ -6,89 +6,97 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject winScreenUI; 
 
-   // public static GameManager instance;
+    public void WinGame()
+    {
+        winScreenUI.SetActive(true); 
+    }
 
-   // [Header("-----Player-----")]
-   // public GameObject player;
-   //// public playerController playerScript;
-   // public GameObject playerSpawnPos;
+    // public static GameManager instance;
 
-   // [Header("-----UI Stuff-----")]
-   // public GameObject activeMenu;
-   // public GameObject pauseMenu;
-   // public GameObject winMenu;
-   // public GameObject loseMenu;
-   // public TextMeshProUGUI enemiesRemainingText;
-   // public Image playerHPBar;
-   // public Image playerStamBar;
-   // public GameObject playerFlashDamagePanel;
+    // [Header("-----Player-----")]
+    // public GameObject player;
+    //// public playerController playerScript;
+    // public GameObject playerSpawnPos;
 
-   // public int enemiesRemaining;
-   // public bool isPaused;
-   // float timescaleOrig;
+    // [Header("-----UI Stuff-----")]
+    // public GameObject activeMenu;
+    // public GameObject pauseMenu;
+    // public GameObject winMenu;
+    // public GameObject loseMenu;
+    // public TextMeshProUGUI enemiesRemainingText;
+    // public Image playerHPBar;
+    // public Image playerStamBar;
+    // public GameObject playerFlashDamagePanel;
 
-   // void Awake()
-   // {
-   //     instance = this;
-   //     player = GameObject.FindGameObjectWithTag("Player");
-   //     playerScript = player.GetComponent<playerController>();
-   //     timescaleOrig = Time.timeScale;
-   //     playerSpawnPos = GameObject.FindGameObjectWithTag("Player Spawn Pos");
-   // }
+    // public int enemiesRemaining;
+    // public bool isPaused;
+    // float timescaleOrig;
 
-   // // Update is called once per frame
-   // void Update()
-   // {
-   //     if (Input.GetButtonDown("Cancel") && activeMenu == null)
-   //     {
-   //         statePause();
-   //         activeMenu = pauseMenu;
-   //         activeMenu.SetActive(isPaused);
-   //     }
-   // }
+    // void Awake()
+    // {
+    //     instance = this;
+    //     player = GameObject.FindGameObjectWithTag("Player");
+    //     playerScript = player.GetComponent<playerController>();
+    //     timescaleOrig = Time.timeScale;
+    //     playerSpawnPos = GameObject.FindGameObjectWithTag("Player Spawn Pos");
+    // }
 
-   // public void statePause()
-   // {
-   //     Time.timeScale = 0;
-   //     Cursor.visible = true;
-   //     Cursor.lockState = CursorLockMode.Confined;
-   //     isPaused = !isPaused;
-   // }
+    // // Update is called once per frame
+    // void Update()
+    // {
+    //     if (Input.GetButtonDown("Cancel") && activeMenu == null)
+    //     {
+    //         statePause();
+    //         activeMenu = pauseMenu;
+    //         activeMenu.SetActive(isPaused);
+    //     }
+    // }
 
-   // public void stateUnpaused()
-   // {
-   //     Time.timeScale = timescaleOrig;
-   //     Cursor.visible = false;
-   //     Cursor.lockState = CursorLockMode.Locked;
-   //     isPaused = !isPaused;
-   //     activeMenu.SetActive(false);
-   //     activeMenu = null;
-   // }
+    // public void statePause()
+    // {
+    //     Time.timeScale = 0;
+    //     Cursor.visible = true;
+    //     Cursor.lockState = CursorLockMode.Confined;
+    //     isPaused = !isPaused;
+    // }
 
-   // public void updateGameGoal(int amount)
-   // {
-   //     enemiesRemaining += amount;
-   //     enemiesRemainingText.text = enemiesRemaining.ToString("F0");
-   //     if (enemiesRemaining <= 0)
-   //     {
-   //         activeMenu = winMenu;
-   //         activeMenu.SetActive(true);
-   //         statePause();
-   //     }
-   // }
+    // public void stateUnpaused()
+    // {
+    //     Time.timeScale = timescaleOrig;
+    //     Cursor.visible = false;
+    //     Cursor.lockState = CursorLockMode.Locked;
+    //     isPaused = !isPaused;
+    //     activeMenu.SetActive(false);
+    //     activeMenu = null;
+    // }
 
-   // public void youLose()
-   // {
-   //     statePause();
-   //     activeMenu = loseMenu;
-   //     activeMenu.SetActive(true);
-   // }
+    // public void updateGameGoal(int amount)
+    // {
+    //     enemiesRemaining += amount;
+    //     enemiesRemainingText.text = enemiesRemaining.ToString("F0");
+    //     if (enemiesRemaining <= 0)
+    //     {
+    //         activeMenu = winMenu;
+    //         activeMenu.SetActive(true);
+    //         statePause();
+    //     }
+    // }
 
-   // public IEnumerator playerFlashDamage()
-   // {
-   //     playerFlashDamagePanel.SetActive(true);
-   //     yield return new WaitForSeconds(0.1f);
-   //     playerFlashDamagePanel.SetActive(false);
-   // }
+    // public void youLose()
+    // {
+    //     statePause();
+    //     activeMenu = loseMenu;
+    //     activeMenu.SetActive(true);
+    // }
+
+    // public IEnumerator playerFlashDamage()
+    // {
+    //     playerFlashDamagePanel.SetActive(true);
+    //     yield return new WaitForSeconds(0.1f);
+    //     playerFlashDamagePanel.SetActive(false);
+    // }
+
+
 }
