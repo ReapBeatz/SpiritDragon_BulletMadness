@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class mechBossAI : MonoBehaviour, IDamage
 {
@@ -11,11 +12,11 @@ public class mechBossAI : MonoBehaviour, IDamage
     [SerializeField] SpriteRenderer model;
     [SerializeField] GameObject[] fireModes;
     [SerializeField] GameObject[] lazerPrefab;
-
+    [SerializeField] Image HPBar;
     [SerializeField] int hp;
     public int elecTowers;
 
-    int halfHp;
+    int origHP;
     public float currTimer;
     public float lTimer;
     [SerializeField]float bombTimer;
@@ -28,7 +29,7 @@ public class mechBossAI : MonoBehaviour, IDamage
         rb = GetComponent<Rigidbody2D>();
         //playerPos = GameObject.FindGameObjectWithTag("Player");
         origColor = model.material.color;
-        halfHp = hp / 2;
+        origHP = hp;
     }
 
     // Update is called once per frame
@@ -83,8 +84,14 @@ public class mechBossAI : MonoBehaviour, IDamage
             else
             {
                 StartCoroutine(flashDamage());
+                updateHPBar();
             }
         }
+    }
+
+    void updateHPBar()
+    {
+        HPBar.fillAmount = (float)hp / origHP;
     }
 
     IEnumerator flashDamage()

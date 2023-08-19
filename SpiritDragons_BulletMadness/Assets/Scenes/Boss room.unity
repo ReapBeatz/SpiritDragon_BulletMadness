@@ -395,6 +395,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MechBoss
       objectReference: {fileID: 0}
+    - target: {fileID: 5515822530769907398, guid: 98fb58efa6d2fe2469c526dcf4a55f7b, type: 3}
+      propertyPath: HPBar
+      value: 
+      objectReference: {fileID: 1529547999}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -34035,6 +34039,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa389506b55fc7b4e81bd3ced5af4abc, type: 3}
+--- !u!114 &1529547999 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1972386831901278326, guid: fa389506b55fc7b4e81bd3ced5af4abc, type: 3}
+  m_PrefabInstance: {fileID: 1529547998}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1609458093
 PrefabInstance:
   m_ObjectHideFlags: 0

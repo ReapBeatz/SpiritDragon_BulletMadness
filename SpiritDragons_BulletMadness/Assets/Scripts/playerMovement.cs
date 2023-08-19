@@ -9,6 +9,7 @@ public class playerMovement : MonoBehaviour , IDamage
     [SerializeField] float moveSpeed;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Camera cam;
+    shooting shootScript;
     public SpriteRenderer model;
     public PolygonCollider2D pc;
 
@@ -23,10 +24,18 @@ public class playerMovement : MonoBehaviour , IDamage
     Vector2 movement;
     Vector2 mousePos;
     Color origColor;
+    float moveSpeedOrig;
+    float fireRateOrig;
+    public bool canUse;
+    float currTimer;
+    [SerializeField] float rageCD;
     void Start()
     {
-        activeMoveSpeed = moveSpeed;
         pc = GetComponent<PolygonCollider2D>();
+        shootScript = GetComponent<shooting>();
+        moveSpeedOrig = moveSpeed;
+        fireRateOrig = shootScript.fireRate;
+        activeMoveSpeed = moveSpeed;
         origColor = model.material.color;
         hpOrig = hp;
         updatePlayerUI();
@@ -36,6 +45,7 @@ public class playerMovement : MonoBehaviour , IDamage
     {
         if (isDead != true)
         {
+            currTimer += Time.deltaTime;
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
 
@@ -52,6 +62,20 @@ public class playerMovement : MonoBehaviour , IDamage
                     model.material.color = Color.cyan;
                 }
             }
+
+            if (currTimer > rageCD)
+            {
+                canUse = true;
+                if (Input.GetKeyDown(KeyCode.E))
+                { 
+                    if (canUse)
+                    {
+                        canUse = false;
+                        StartCoroutine(Rage());
+                    }
+                }
+            }
+
 
             if (dashTimer > 0)
             {
@@ -126,5 +150,18 @@ public class playerMovement : MonoBehaviour , IDamage
         model.enabled = true;
         pc.enabled = true;
         isDead = false;
+    }
+
+    IEnumerator Rage() 
+    {
+        currTimer = 0;
+        model.color = new Color(1, 0, 1, 1);
+        moveSpeed = 8;
+        shootScript.fireRate *= 2;
+        yield return new WaitForSeconds(3);
+        model.color = origColor;
+        moveSpeed = moveSpeedOrig;
+        shootScript.fireRate = fireRateOrig;
+        canUse = true;
     }
 }
