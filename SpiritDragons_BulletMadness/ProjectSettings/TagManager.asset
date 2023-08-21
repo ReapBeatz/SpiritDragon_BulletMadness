@@ -8,6 +8,9 @@ TagManager:
   - ElecTower
   - playerSpawnPos
   - mechBoss
+  - UpgradeStation
+  - Chest
+  - nextLevelCheck
   layers:
   - Default
   - TransparentFX

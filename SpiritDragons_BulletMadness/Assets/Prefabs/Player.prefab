@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5102464323370789345}
   - component: {fileID: 8632656620994686919}
   - component: {fileID: 2809468433255235150}
+  - component: {fileID: 4614519449486082938}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -35,7 +36,7 @@ Transform:
   m_Children:
   - {fileID: 1832507416586693796}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5245931156478925897
 SpriteRenderer:
@@ -129,18 +130,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 25
+  shield: 0
   money: 500
   moveSpeed: 5
   rb: {fileID: 375048076313296813}
   cam: {fileID: 0}
+  dashClip: {fileID: 8300000, guid: e71f7e377df8d3040999a921a40e772a, type: 3}
+  rageClip: {fileID: 8300000, guid: 955ce1475a0b8b9489528fd606438e92, type: 3}
+  hurtClip1: {fileID: 8300000, guid: 848ab28ab1e23b04f97178e670d338d7, type: 3}
+  hurtClip2: {fileID: 8300000, guid: 159181bd4d1e6cd4790d7c13257d1d76, type: 3}
+  shieldClip: {fileID: 8300000, guid: 848ef9908b4505d4a86004edc9f49fd6, type: 3}
+  bulletDamage: {fileID: -6899047845570444266, guid: ddcde6e7f3ef8fe42b05b1579a9cd5f2, type: 3}
   model: {fileID: 5245931156478925897}
   pc: {fileID: 2809468433255235150}
   dashSpeed: 40
   dashLength: 0.1
   dashCD: 0.5
   dashTimer: 0
+  rageCD: 5
+  shieldCD: 6
   hpOrig: 0
+  maxShield: 10
   isDead: 0
+  canUse: 0
+  hasDash: 0
+  hasRage: 0
+  hasShield: 0
+  hurtNum: 0
+  damageKey: 
+  fireRateKey: 
+  maxHealthKey: 
+  moneyKey: 
+  dashLengthKey: 
 --- !u!114 &8632656620994686919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +227,102 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
+--- !u!82 &4614519449486082938
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2177542512531563094}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 5098688653117775410, guid: fb60ee208d8bbbb40a000da4409cd0f2, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.6
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5386084121474506153
 GameObject:
   m_ObjectHideFlags: 0

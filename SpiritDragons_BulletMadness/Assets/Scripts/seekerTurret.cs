@@ -10,7 +10,7 @@ public class seekerTurret : MonoBehaviour, IDamage
     [SerializeField] SpriteRenderer model;
     [SerializeField] GameObject seeker;
     [SerializeField] float launchTimer = 5;
-    [SerializeField] GameObject colliderGO;
+    [SerializeField] detection colliderGO;
     public float currTimer;
 
     [SerializeField] int hp;
@@ -32,7 +32,7 @@ public class seekerTurret : MonoBehaviour, IDamage
 
     void shoot()
     {
-        if (currTimer > launchTimer)
+        if (currTimer > launchTimer && colliderGO.inRange)
         {
             Instantiate(seeker, transform.position, Quaternion.identity);
             currTimer = 0;

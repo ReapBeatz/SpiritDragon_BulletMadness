@@ -88,7 +88,7 @@ Transform:
   - {fileID: 6200784163213194046}
   - {fileID: 4507526252648386309}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6474956302096113173
 SpriteRenderer:
@@ -159,7 +159,7 @@ MonoBehaviour:
   model: {fileID: 6474956302096113173}
   seeker: {fileID: 5636927368566327834, guid: b0559ca1cf06645488b1f8ea50b07a84, type: 3}
   launchTimer: 5
-  colliderGO: {fileID: 6416268166645782709}
+  colliderGO: {fileID: 2018436554987899037}
   currTimer: 0
   hp: 15
 --- !u!50 &7262109028448139294

@@ -453,7 +453,7 @@ MonoBehaviour:
   - {fileID: 5700174357826270307}
   - {fileID: 4940623316611915559}
   - {fileID: 2964327421348898298}
-  hp: 150
+  hp: 250
   speed: 4
   mST: {fileID: 4888198215356932698}
   HPBar: {fileID: 0}

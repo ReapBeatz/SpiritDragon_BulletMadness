@@ -484,7 +484,8 @@ MonoBehaviour:
   - {fileID: 6061220050045321358}
   - {fileID: 4550937613049191104}
   mB: {fileID: 0}
-  hp: 10
+  health: {fileID: 0}
+  hp: 50
 --- !u!1 &5726396096287843039
 GameObject:
   m_ObjectHideFlags: 0

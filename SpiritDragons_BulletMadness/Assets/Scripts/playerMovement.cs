@@ -5,10 +5,17 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour , IDamage
 {
     public int hp;
+    public int shield;
     public int money;
     [SerializeField] float moveSpeed;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Camera cam;
+    [SerializeField] AudioClip dashClip;
+    [SerializeField] AudioClip rageClip;
+    [SerializeField] AudioClip hurtClip1;
+    [SerializeField] AudioClip hurtClip2;
+    [SerializeField] AudioClip shieldClip;
+    [SerializeField] playerBullet bulletDamage;
     shooting shootScript;
     public SpriteRenderer model;
     public PolygonCollider2D pc;
@@ -18,7 +25,12 @@ public class playerMovement : MonoBehaviour , IDamage
     public float dashLength = .5f;
     [SerializeField] float dashCD = 1f;
     public float dashTimer;
+    [SerializeField] float rageCD;
+    float rageTimer;
+    [SerializeField] float shieldCD;
+    float shieldTimer;
     public int hpOrig;
+    public int maxShield;
     float dashCountCD;
     public bool isDead = false;
     Vector2 movement;
@@ -27,12 +39,31 @@ public class playerMovement : MonoBehaviour , IDamage
     float moveSpeedOrig;
     float fireRateOrig;
     public bool canUse;
-    float currTimer;
-    [SerializeField] float rageCD;
+    AudioSource audioSource;
+
+    public bool hasDash = false;
+    public bool hasRage = false;
+    public bool hasShield = false;
+    public int hurtNum;
+
+    //public string damageKey = "Damage";
+    //public string fireRateKey = "fireRate";
+    //public string maxHealthKey = "maxHealth";
+    //public string moneyKey = "money";
+    //public string dashLengthKey = "dashLength";
+    void Awake() 
+    {
+        shootScript = GetComponent<shooting>();
+        //bulletDamage.damage = PlayerPrefs.GetInt(damageKey, 2);
+        //shootScript. fireRate = PlayerPrefs.GetFloat(fireRateKey, 3f);
+        //hpOrig = PlayerPrefs.GetInt(maxHealthKey, 25);
+        //money =  PlayerPrefs.GetInt(moneyKey, 0);
+        //dashLength = PlayerPrefs.GetFloat(dashLengthKey, .1f);
+    }
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         pc = GetComponent<PolygonCollider2D>();
-        shootScript = GetComponent<shooting>();
         moveSpeedOrig = moveSpeed;
         fireRateOrig = shootScript.fireRate;
         activeMoveSpeed = moveSpeed;
@@ -45,7 +76,8 @@ public class playerMovement : MonoBehaviour , IDamage
     {
         if (isDead != true)
         {
-            currTimer += Time.deltaTime;
+            rageTimer += Time.deltaTime;
+            shieldTimer += Time.deltaTime;
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
 
@@ -54,8 +86,9 @@ public class playerMovement : MonoBehaviour , IDamage
 
             if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Fire2"))
             {
-                if (dashCountCD <= 0 && dashTimer <= 0)
+                if (dashCountCD <= 0 && dashTimer <= 0 && hasDash) 
                 {
+                    audioSource.PlayOneShot(dashClip);
                     activeMoveSpeed = dashSpeed;
                     dashTimer = dashLength;
                     gameObject.layer = LayerMask.NameToLayer("Invulnerable");
@@ -63,7 +96,18 @@ public class playerMovement : MonoBehaviour , IDamage
                 }
             }
 
-            if (currTimer > rageCD)
+            if (shieldTimer > shieldCD && hasShield)
+            {
+                if (Input.GetKeyDown(KeyCode.Q))
+                {
+                    audioSource.PlayOneShot(shieldClip);
+                    shield += 10;
+                    shieldTimer = 0;
+                    updatePlayerUI();
+                }
+            }
+
+            if (rageTimer > rageCD && hasRage)
             {
                 canUse = true;
                 if (Input.GetKeyDown(KeyCode.E))
@@ -109,19 +153,38 @@ public class playerMovement : MonoBehaviour , IDamage
 
     public void takeDamage(int dmgAmount)
     {
-        hp -= dmgAmount;
-        StartCoroutine(dmgInvul());
-        StartCoroutine(gameManager.instance.playerFlashDamage());
-        updatePlayerUI();
-        if (hp <= 0)
+        hurtNum = Random.Range(0, 2);
+        if (hurtNum == 0)
         {
-            gameManager.instance.youLose();
+            audioSource.PlayOneShot(hurtClip1);
+        }
+        else if (hurtNum == 1) 
+        {
+            audioSource.PlayOneShot(hurtClip2);
+        }        
+        if (shield <= 0)
+        {
+            hp -= dmgAmount;
+            StartCoroutine(dmgInvul());
+            StartCoroutine(gameManager.instance.playerFlashDamage());
+            updatePlayerUI();
+            if (hp <= 0)
+            {
+                gameManager.instance.youLose();
+            }
+        }
+        else
+        {
+            shield-= dmgAmount;
+            StartCoroutine(gameManager.instance.playerFlashDamage());
+            updatePlayerUI();
         }
     }
 
     public void updatePlayerUI()
     {
         gameManager.instance.playerHPBar.fillAmount = (float)hp / hpOrig;
+        gameManager.instance.playerShieldBar.fillAmount = (float)shield / maxShield;
         gameManager.instance.moneyText.text = money.ToString("F0");
     }
 
@@ -154,7 +217,8 @@ public class playerMovement : MonoBehaviour , IDamage
 
     IEnumerator Rage() 
     {
-        currTimer = 0;
+        audioSource.PlayOneShot(rageClip);
+        rageTimer = 0;
         model.color = new Color(1, 0, 1, 1);
         moveSpeed = 8;
         shootScript.fireRate *= 2;

@@ -10,6 +10,7 @@ public class elecTowerAI : MonoBehaviour , IDamage
     [SerializeField] SpriteRenderer model;
     [SerializeField] GameObject[] fireModes;
     [SerializeField] mechBossAI mB;
+    [SerializeField] GameObject health;
 
     [SerializeField] int hp;
     int halfHp;
@@ -45,12 +46,19 @@ public class elecTowerAI : MonoBehaviour , IDamage
         if (hp <= 0)
         {
             mB.elecTowers--;
+            dropHealth();
             Destroy(gameObject);
         }
         else
         {
             StartCoroutine(flashDamage());
         }
+    }
+
+    void dropHealth()
+    {
+        Vector2 position = transform.position;
+        Instantiate(health, position, Quaternion.identity);
     }
 
     IEnumerator flashDamage()

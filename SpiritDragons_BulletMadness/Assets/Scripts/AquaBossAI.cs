@@ -16,6 +16,7 @@ public class AquaBossAI : MonoBehaviour, IDamage
     [SerializeField] float speed;
     [SerializeField] modSeekerTurret mST;
     [SerializeField] Image HPBar;
+    [SerializeField] playerMovement playerScript;
     Color origColor;
     public int hpOrig;
     public float speedOrig;
@@ -129,6 +130,10 @@ public class AquaBossAI : MonoBehaviour, IDamage
         hp -= dmgAmount;
         if (hp <= 0)
         {
+            playerScript.hasDash = true;
+            playerScript.money += 500;
+            playerScript.updatePlayerUI();
+            playerScript.hasRage = true;
             Destroy(gameObject);
         }
         else

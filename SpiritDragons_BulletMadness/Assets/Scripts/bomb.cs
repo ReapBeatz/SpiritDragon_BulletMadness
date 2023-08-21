@@ -9,10 +9,15 @@ public class bomb : MonoBehaviour
     [SerializeField] float liveTime;
     [SerializeField] GameObject wave;
     [SerializeField] SpriteRenderer sR;
+    AudioSource aSource;
     public float currTimer;
     public bool hasLanded = false;
     //public GameObject hitEffect;
 
+    private void Start()
+    {
+        aSource = GetComponent<AudioSource>();
+    }
     private void Update()
     {
         currTimer += Time.deltaTime;
@@ -22,6 +27,7 @@ public class bomb : MonoBehaviour
             currTimer = 0;
             hasLanded = true;
             sR.enabled = false;
+            aSource.Play();
         }
         if (currTimer > liveTime && hasLanded)
         {

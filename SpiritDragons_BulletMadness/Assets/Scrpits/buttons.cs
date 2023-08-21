@@ -13,6 +13,9 @@ public class buttons : MonoBehaviour
     [SerializeField] TextMeshProUGUI damageCostText;
     [SerializeField] TextMeshProUGUI fireRateCostText;
     [SerializeField] TextMeshProUGUI dashCostText;
+    [SerializeField] GameObject optionsPanel;
+    [SerializeField] GameObject pauseButtons;
+    AudioSource aSource;
     public int healthCost;
     public int damageCost;
     public int fireRateCost;
@@ -20,6 +23,7 @@ public class buttons : MonoBehaviour
 
     private void Start()
     {
+        aSource = GetComponent<AudioSource>();
         healthCostText.text = healthCost.ToString("F0");
         damageCostText.text = damageCost.ToString("F0");
         fireRateCostText.text = fireRateCost.ToString("F0");
@@ -28,23 +32,34 @@ public class buttons : MonoBehaviour
 
     public void resume()
     {
+        aSource.Play();
         gameManager.instance.stateUnpaused();
+    }
+
+    public void options()
+    {
+        aSource.Play();
+        optionsPanel.SetActive(true);
+        pauseButtons.SetActive(false);
     }
 
     public void respawn()
     {
+        aSource.Play();
         gameManager.instance.stateUnpaused();
         gameManager.instance.playerScript.spawnPlayer();
     }
 
     public void restart()
     {
+        aSource.Play();
         gameManager.instance.stateUnpaused();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void quit()
     {
+        aSource.Play();
         Application.Quit();
     }
 

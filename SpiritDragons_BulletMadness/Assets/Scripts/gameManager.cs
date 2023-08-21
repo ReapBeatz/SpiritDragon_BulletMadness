@@ -22,10 +22,13 @@ public class gameManager : MonoBehaviour
     public GameObject playerFlashDamagePanel;
     public TextMeshProUGUI enemiesRemainingText;
     public TextMeshProUGUI moneyText;
+    public TextMeshProUGUI dialougeText;
     public Image playerHPBar;
+    public Image playerShieldBar;
     public int enemiesRemaining;
     public bool isPaused;
     float timescaleOrig;
+    public bool endGame;
     // Start is called before the first frame update
     void Awake()
     {
@@ -71,7 +74,7 @@ public class gameManager : MonoBehaviour
     {
         enemiesRemaining += amount;
         enemiesRemainingText.text = enemiesRemaining.ToString("F0");
-        if (enemiesRemaining <= 0)
+        if (enemiesRemaining <= 0 && endGame)
         {
             gameObject.layer = LayerMask.NameToLayer("Invulnerable");
             StartCoroutine(winMenuTimer());
