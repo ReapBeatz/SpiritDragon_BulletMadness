@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using Unity.VisualScripting;
 
 public class buttons : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class buttons : MonoBehaviour
         damageCostText.text = damageCost.ToString("F0");
         fireRateCostText.text = fireRateCost.ToString("F0");
         dashCostText.text = dashCost.ToString("F0");
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<playerMovement>();
+        shootScript = GameObject.FindGameObjectWithTag("Player").GetComponent<shooting>();
     }
 
     public void resume()
@@ -57,10 +60,10 @@ public class buttons : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void quit()
+    public void backToMainMenu()
     {
         aSource.Play();
-        Application.Quit();
+        SceneManager.LoadSceneAsync(0);
     }
 
     public void upgradeHealth() 

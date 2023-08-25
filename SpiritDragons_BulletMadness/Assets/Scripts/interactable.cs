@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.Interactions;
 
 public class interactable : MonoBehaviour
 {
     [SerializeField] playerMovement playerScript;
+    [SerializeField] string say;
     public bool inRange = false;
     // Start is called before the first frame update
     void Start()
@@ -32,6 +34,7 @@ public class interactable : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            gameManager.instance.dialougeText.text = say;
             inRange = true;
         }
     }
@@ -41,6 +44,7 @@ public class interactable : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             inRange = false;
+            gameManager.instance.dialougeText.text = " ";
             if (gameManager.instance.activeMenu != null)
             {
                 gameManager.instance.activeMenu.SetActive(false);

@@ -230,10 +230,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 8.866149, y: 4.7767696}
-      - {x: -8.723548, y: 4.9771295}
-      - {x: -8.743202, y: -5.0434246}
-      - {x: 8.703698, y: -4.9051223}
+    - - {x: 8.7842865, y: 3.9303427}
+      - {x: -8.770649, y: 3.8973355}
+      - {x: -8.7664995, y: -6.017366}
+      - {x: 8.770553, y: -5.9885345}
   m_UseDelaunayMesh: 0
 --- !u!1 &160311800
 GameObject:
@@ -4096,11 +4096,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 711095058484456110, guid: 915aedaa13dcf13409f760377da6dc8e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.0068209553
       objectReference: {fileID: 0}
     - target: {fileID: 711095058484456110, guid: 915aedaa13dcf13409f760377da6dc8e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.02
+      value: -1.04351
       objectReference: {fileID: 0}
     - target: {fileID: 711095058484456110, guid: 915aedaa13dcf13409f760377da6dc8e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4135,12 +4135,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3904775252778572486, guid: 915aedaa13dcf13409f760377da6dc8e, type: 3}
+      propertyPath: m_MaxWindowSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3904775252778572486, guid: 915aedaa13dcf13409f760377da6dc8e, type: 3}
       propertyPath: m_BoundingShape2D
       value: 
       objectReference: {fileID: 149182216}
     - target: {fileID: 5022571423772587710, guid: 915aedaa13dcf13409f760377da6dc8e, type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251856828525631114, guid: 915aedaa13dcf13409f760377da6dc8e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0068209553
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251856828525631114, guid: 915aedaa13dcf13409f760377da6dc8e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.02350998
       objectReference: {fileID: 0}
     - target: {fileID: 6937791081662013239, guid: 915aedaa13dcf13409f760377da6dc8e, type: 3}
       propertyPath: m_Follow
@@ -4149,7 +4161,7 @@ PrefabInstance:
     - target: {fileID: 6937791081662013239, guid: 915aedaa13dcf13409f760377da6dc8e, type: 3}
       propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 149182215}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4363,7 +4375,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1873672483401715444, guid: f71de52801c28284cbaca82650a06a0e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4413650053445948939, guid: f71de52801c28284cbaca82650a06a0e, type: 3}
       propertyPath: playerScript
@@ -4896,7 +4908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8695439692841345172, guid: 30785eb7635aa8a4b90bcee9a7ea29e5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5263,6 +5275,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 342353719808207030, guid: fa389506b55fc7b4e81bd3ced5af4abc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369760751399204161, guid: fa389506b55fc7b4e81bd3ced5af4abc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262622275986981450, guid: fa389506b55fc7b4e81bd3ced5af4abc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4377690863925296494, guid: fa389506b55fc7b4e81bd3ced5af4abc, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -5355,6 +5379,10 @@ PrefabInstance:
       propertyPath: playerScript
       value: 
       objectReference: {fileID: 698217976}
+    - target: {fileID: 5636895180632460643, guid: fa389506b55fc7b4e81bd3ced5af4abc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5992465731126424672, guid: fa389506b55fc7b4e81bd3ced5af4abc, type: 3}
       propertyPath: m_Name
       value: UI
@@ -5576,7 +5604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5804687966176369770, guid: 10ea84f126e3fa44098336954dabd4fb, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5981725009413600206, guid: 10ea84f126e3fa44098336954dabd4fb, type: 3}
       propertyPath: HPBar

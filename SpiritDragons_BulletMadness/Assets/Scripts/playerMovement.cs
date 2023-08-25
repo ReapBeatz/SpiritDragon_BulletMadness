@@ -213,6 +213,7 @@ public class playerMovement : MonoBehaviour , IDamage
         model.enabled = true;
         pc.enabled = true;
         isDead = false;
+        updatePlayerUI();
     }
 
     IEnumerator Rage() 
