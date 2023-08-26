@@ -62,6 +62,7 @@ public class playerMovement : MonoBehaviour , IDamage
     }
     void Start()
     {
+        gameManager.instance.GameReset();
         audioSource = GetComponent<AudioSource>();
         pc = GetComponent<PolygonCollider2D>();
         moveSpeedOrig = moveSpeed;
