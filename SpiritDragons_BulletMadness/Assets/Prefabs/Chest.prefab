@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 0}
+  say: Press 'F' To Open
   inRange: 0
 --- !u!61 &4323036541042658518
 BoxCollider2D:

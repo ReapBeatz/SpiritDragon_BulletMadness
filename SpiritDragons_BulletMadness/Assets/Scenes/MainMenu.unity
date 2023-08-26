@@ -537,7 +537,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Sfx\r & Music\n\nhttps://pixabay.com/sound-effects/dark-magic-loop-47178/
+  m_text: "SFX & Music\n\nhttps://pixabay.com/sound-effects/dark-magic-loop-47178/
     - Dark Magic Loop -/ Pixabay\r\n\nhttps://pixabay.com/sound-effects/ticking-clock-1-27477/
     - Ticking Clock_1 -/ Pixabay\r\n\nhttps://pixabay.com/sound-effects/plasma-gun-fire-162136/
     - Plasma Gun Fire -/ LordSonny\r\n\nhttps://pixabay.com/sound-effects/male-voice-screaming-loudly-6147/
@@ -960,7 +960,7 @@ RectTransform:
   m_GameObject: {fileID: 350335681}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 893106189}
@@ -970,7 +970,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 250, y: 100}
+  m_SizeDelta: {x: 200, y: 80}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &350335683
 MonoBehaviour:
@@ -1772,7 +1772,6 @@ GameObject:
   - component: {fileID: 667733407}
   - component: {fileID: 667733406}
   - component: {fileID: 667733409}
-  - component: {fileID: 667733410}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1866,19 +1865,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04b7e235fb61c1b41914f665a8d68c6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &667733410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 667733405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9e9b47a5b206f048ada0b16a6ce1484, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cursorArrow: {fileID: 2800000, guid: f20fe3dda36e95f4ba0be2f9b35b1a85, type: 3}
 --- !u!1 &676068929
 GameObject:
   m_ObjectHideFlags: 0
@@ -2479,8 +2465,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 64
-  m_fontSizeBase: 64
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

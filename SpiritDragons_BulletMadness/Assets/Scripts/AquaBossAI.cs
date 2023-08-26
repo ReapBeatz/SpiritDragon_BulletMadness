@@ -8,6 +8,7 @@ public class AquaBossAI : MonoBehaviour, IDamage
 {
     [SerializeField] GameObject pointA;
     [SerializeField] GameObject pointB;
+    CapsuleCollider2D cc2D;
     Rigidbody2D rb;
     Transform currentPoint;
     [SerializeField] SpriteRenderer model;
@@ -24,10 +25,13 @@ public class AquaBossAI : MonoBehaviour, IDamage
     [SerializeField] float rageTimer;
     public float currTimer;
     public bool inRage = false;
+    bool notDead = true;
     // Start is called before the first frame update
     void Start()
     {
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<playerMovement>();
         rb = GetComponent<Rigidbody2D>();
+        cc2D = GetComponent<CapsuleCollider2D>();
         currentPoint = pointB.transform;
         origColor = model.material.color;
         hpOrig = hp;
@@ -38,48 +42,51 @@ public class AquaBossAI : MonoBehaviour, IDamage
     // Update is called once per frame
     void Update()
     {
-        if (!inRage)
+        if (notDead)
         {
-            currTimer += Time.deltaTime;
-        }
-
-        Vector2 point = currentPoint.position - transform.position;
-        if (currentPoint == pointB.transform)
-        {
-            rb.velocity = new Vector2(speed, 0);
-        }
-        else
-        {
-            rb.velocity = new Vector2(-speed, 0);
-        }
-        if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointB.transform)
-        {
-            //flip();
-            currentPoint = pointA.transform;
-        }
-        if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointA.transform)
-        {
-            //flip();
-            currentPoint = pointB.transform;
-        }
-        //if (inRage) 
-        //{
-        //    StartCoroutine(rageCD());
-        //    inRage = false;
-        //    currTimer = 0;
-        //}
-        if (hp <= hpOrig/4 || currTimer > rageTimer) 
-        {
-            inRage = true;
-            if(inRage) 
+            if (!inRage)
             {
-                rage();
-                StartCoroutine(rageCD());
+                currTimer += Time.deltaTime;
             }
-        }
-        else if (!inRage)
-        {
-            shoot();
+
+            Vector2 point = currentPoint.position - transform.position;
+            if (currentPoint == pointB.transform)
+            {
+                rb.velocity = new Vector2(speed, 0);
+            }
+            else
+            {
+                rb.velocity = new Vector2(-speed, 0);
+            }
+            if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointB.transform)
+            {
+                //flip();
+                currentPoint = pointA.transform;
+            }
+            if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointA.transform)
+            {
+                //flip();
+                currentPoint = pointB.transform;
+            }
+            //if (inRage) 
+            //{
+            //    StartCoroutine(rageCD());
+            //    inRage = false;
+            //    currTimer = 0;
+            //}
+            if (hp <= hpOrig / 4 || currTimer > rageTimer)
+            {
+                inRage = true;
+                if (inRage)
+                {
+                    rage();
+                    StartCoroutine(rageCD());
+                }
+            }
+            else if (!inRage)
+            {
+                shoot();
+            }
         }
     }
 
@@ -134,7 +141,11 @@ public class AquaBossAI : MonoBehaviour, IDamage
             playerScript.money += 500;
             playerScript.updatePlayerUI();
             playerScript.hasRage = true;
-            Destroy(gameObject);
+            gameManager.instance.StartCoroutine(gameManager.instance.winMenuTimer());
+            mST.enabled = false;
+            cc2D.enabled = false;
+            model.enabled = false;
+            notDead = false;
         }
         else
         {

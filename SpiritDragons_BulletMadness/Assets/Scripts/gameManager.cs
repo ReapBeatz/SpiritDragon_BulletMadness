@@ -62,12 +62,20 @@ public class gameManager : MonoBehaviour
         isPaused = !isPaused;
     }
 
+    public void GameReset()
+    {
+        Time.timeScale = timescaleOrig;
+    }
+
     public void stateUnpaused()
     {
         Time.timeScale = timescaleOrig;
         isPaused = !isPaused;
-        activeMenu.SetActive(false);
-        activeMenu = null;
+        if (activeMenu != null) 
+        {
+            activeMenu.SetActive(false);
+            activeMenu = null;
+        }
     }
 
     public void updateGameGoal(int amount)
@@ -81,7 +89,7 @@ public class gameManager : MonoBehaviour
         }
     }
 
-    IEnumerator winMenuTimer()
+    public IEnumerator winMenuTimer()
     {
         yield return new WaitForSeconds(3);
         activeMenu = winMenu;

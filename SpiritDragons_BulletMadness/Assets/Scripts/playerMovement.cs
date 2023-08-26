@@ -62,6 +62,7 @@ public class playerMovement : MonoBehaviour , IDamage
     }
     void Start()
     {
+        gameManager.instance.GameReset();
         audioSource = GetComponent<AudioSource>();
         pc = GetComponent<PolygonCollider2D>();
         moveSpeedOrig = moveSpeed;
@@ -213,6 +214,7 @@ public class playerMovement : MonoBehaviour , IDamage
         model.enabled = true;
         pc.enabled = true;
         isDead = false;
+        updatePlayerUI();
     }
 
     IEnumerator Rage() 
