@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8632656620994686919}
   - component: {fileID: 2809468433255235150}
   - component: {fileID: 4614519449486082938}
+  - component: {fileID: 6209897194104100135}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -36,7 +37,7 @@ Transform:
   m_Children:
   - {fileID: 1832507416586693796}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5245931156478925897
 SpriteRenderer:
@@ -131,7 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 25
   shield: 0
-  money: 500
+  money: 0
   moveSpeed: 5
   rb: {fileID: 375048076313296813}
   cam: {fileID: 0}
@@ -157,11 +158,6 @@ MonoBehaviour:
   hasRage: 0
   hasShield: 0
   hurtNum: 0
-  damageKey: 
-  fireRateKey: 
-  maxHealthKey: 
-  moneyKey: 
-  dashLengthKey: 
 --- !u!114 &8632656620994686919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,6 +319,14 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!81 &6209897194104100135
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2177542512531563094}
+  m_Enabled: 1
 --- !u!1 &5386084121474506153
 GameObject:
   m_ObjectHideFlags: 0
