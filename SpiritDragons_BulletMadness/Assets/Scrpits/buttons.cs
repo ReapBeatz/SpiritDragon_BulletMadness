@@ -73,6 +73,7 @@ public class buttons : MonoBehaviour
             playerScript.money -= healthCost;
             playerScript.hp += 5;
             playerScript.hpOrig += 5;
+            PlayerPrefs.SetInt(playerScript.maxHealthKey, playerScript.hpOrig);
             healthCost += 250;
             healthCostText.text = healthCost.ToString("F0");
             playerScript.updatePlayerUI();
@@ -85,6 +86,7 @@ public class buttons : MonoBehaviour
         {
             playerScript.money -= damageCost;
             bulletScript.damage += 2;
+            PlayerPrefs.SetInt(playerScript.damageKey ,bulletScript.damage);
             damageCost += 100;
             damageCostText.text = damageCost.ToString("F0");
             playerScript.updatePlayerUI();
@@ -97,6 +99,7 @@ public class buttons : MonoBehaviour
         {
             playerScript.money -= fireRateCost;
             shootScript.fireRate++;
+            PlayerPrefs.SetFloat(playerScript.fireRateKey, shootScript.fireRate);
             fireRateCost += 75;
             fireRateCostText.text = fireRateCost.ToString("F0");
             playerScript.updatePlayerUI();
@@ -109,6 +112,7 @@ public class buttons : MonoBehaviour
         {
             playerScript.money -= dashCost;
             playerScript.dashLength += .25f;
+            PlayerPrefs.SetFloat(playerScript.dashLengthKey, playerScript.dashLength);
             dashCost += 200;
             dashCostText.text = dashCost.ToString("F0");
             playerScript.updatePlayerUI();

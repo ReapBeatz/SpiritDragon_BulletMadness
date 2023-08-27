@@ -70,15 +70,6 @@ public class mechBossAI : MonoBehaviour, IDamage
         }
     }
 
-    void mode()
-    {
-        //if (hp <= halfHp)
-        //{
-        //    fireModes[0].SetActive(false);
-        //    fireModes[1].SetActive(true);
-        //}
-    }
-
     public void takeDamage(int dmgAmount)
     {
         if (elecTowers == -1)
@@ -89,7 +80,8 @@ public class mechBossAI : MonoBehaviour, IDamage
                 playerScript.hasDash = true;
                 playerScript.money += 500;
                 playerScript.updatePlayerUI();
-                playerScript.hasShield = true;
+                //playerScript.hasShield = true;
+                PlayerPrefs.SetInt(playerScript.moneyKey, playerScript.money);
                 StartCoroutine(LoadNextScene());
             }
             else

@@ -127,9 +127,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScript: {fileID: 0}
   bulletPrefab: {fileID: 2856461748329167953, guid: 164f5599a1db9b04daaf590c06e4d721, type: 3}
-  fireRate: 0.25
+  fireRate: 0.3
   fireDelay: 0
-  bulletForce: 20
+  bulletForce: 10
   currTimer: 0
 --- !u!1 &8695439692841345172
 GameObject:

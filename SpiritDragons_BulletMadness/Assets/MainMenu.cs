@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
+        PlayerPrefs.DeleteAll();
         SceneManager.LoadSceneAsync(1);
     }
 

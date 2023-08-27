@@ -46,22 +46,20 @@ public class playerMovement : MonoBehaviour , IDamage
     public bool hasShield = false;
     public int hurtNum;
 
-    //public string damageKey = "Damage";
-    //public string fireRateKey = "fireRate";
-    //public string maxHealthKey = "maxHealth";
-    //public string moneyKey = "money";
-    //public string dashLengthKey = "dashLength";
-    void Awake() 
-    {
-        shootScript = GetComponent<shooting>();
-        //bulletDamage.damage = PlayerPrefs.GetInt(damageKey, 2);
-        //shootScript. fireRate = PlayerPrefs.GetFloat(fireRateKey, 3f);
-        //hpOrig = PlayerPrefs.GetInt(maxHealthKey, 25);
-        //money =  PlayerPrefs.GetInt(moneyKey, 0);
-        //dashLength = PlayerPrefs.GetFloat(dashLengthKey, .1f);
-    }
+    public string damageKey = "Damage";
+    public string fireRateKey = "fireRate";
+    public string maxHealthKey = "maxHealth";
+    public string moneyKey = "money";
+    public string dashLengthKey = "dashLength";
+
     void Start()
     {
+        shootScript = GetComponent<shooting>();
+        bulletDamage.damage = PlayerPrefs.GetInt(damageKey, 2);
+        shootScript.fireRate = PlayerPrefs.GetFloat(fireRateKey, 3f);
+        hpOrig = PlayerPrefs.GetInt(maxHealthKey, 25);
+        money = PlayerPrefs.GetInt(moneyKey, 0);
+        dashLength = PlayerPrefs.GetFloat(dashLengthKey, .1f);
         gameManager.instance.GameReset();
         audioSource = GetComponent<AudioSource>();
         pc = GetComponent<PolygonCollider2D>();
@@ -171,6 +169,7 @@ public class playerMovement : MonoBehaviour , IDamage
             updatePlayerUI();
             if (hp <= 0)
             {
+                gameManager.instance.playerHPBar.fillAmount = 0;
                 gameManager.instance.youLose();
             }
         }
@@ -185,6 +184,10 @@ public class playerMovement : MonoBehaviour , IDamage
     public void updatePlayerUI()
     {
         gameManager.instance.playerHPBar.fillAmount = (float)hp / hpOrig;
+        if (gameManager.instance.playerHPBar.fillAmount < .1f && hp != 0)
+        {
+            gameManager.instance.playerHPBar.fillAmount = .1f;
+        }
         gameManager.instance.playerShieldBar.fillAmount = (float)shield / maxShield;
         gameManager.instance.moneyText.text = money.ToString("F0");
     }

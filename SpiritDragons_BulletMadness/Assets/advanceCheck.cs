@@ -31,12 +31,8 @@ public class advanceCheck : MonoBehaviour
         }
         if (collision.CompareTag("Player") && gameManager.instance.enemiesRemaining <= 0 && tag == "nextLevelCheck")
         {
-            //PlayerPrefs.SetFloat(playerScript.fireRateKey, shootScript.fireRate);
-            //PlayerPrefs.SetInt(playerScript.damageKey, bulletScript.damage);
-            //PlayerPrefs.SetInt(playerScript.maxHealthKey, playerScript.hpOrig);
-            //PlayerPrefs.SetInt(playerScript.moneyKey, playerScript.money);
-            //PlayerPrefs.SetFloat(playerScript.dashLengthKey, playerScript.dashLength);
-           
+            PlayerPrefs.SetInt(playerScript.moneyKey, playerScript.money);
+
             SceneManager.LoadSceneAsync(nextSceneNum);
         }
     }

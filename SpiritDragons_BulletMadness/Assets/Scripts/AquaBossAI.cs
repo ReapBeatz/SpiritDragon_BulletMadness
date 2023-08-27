@@ -141,6 +141,7 @@ public class AquaBossAI : MonoBehaviour, IDamage
             playerScript.money += 500;
             playerScript.updatePlayerUI();
             playerScript.hasRage = true;
+            PlayerPrefs.SetInt(playerScript.moneyKey, playerScript.money);
             gameManager.instance.StartCoroutine(gameManager.instance.winMenuTimer());
             mST.enabled = false;
             cc2D.enabled = false;

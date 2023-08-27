@@ -19,6 +19,7 @@ public class interactable : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && inRange && gameObject.tag == "UpgradeStation")
         {
+            gameManager.instance.dialougeText.enabled = false;
             gameManager.instance.activeMenu = gameManager.instance.upgradeMenu;
             gameManager.instance.activeMenu.SetActive(true);
         }
@@ -43,6 +44,7 @@ public class interactable : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            gameManager.instance.dialougeText.enabled = true;
             inRange = false;
             gameManager.instance.dialougeText.text = " ";
             if (gameManager.instance.activeMenu != null)

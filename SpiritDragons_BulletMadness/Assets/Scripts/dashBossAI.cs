@@ -120,6 +120,7 @@ public class dashBossAI : MonoBehaviour, IDamage
             playerScript.hasDash = true;
             playerScript.money += 500;
             playerScript.updatePlayerUI();
+            PlayerPrefs.SetInt(playerScript.moneyKey, playerScript.money);
             StartCoroutine(LoadNextScene());
         }
         else

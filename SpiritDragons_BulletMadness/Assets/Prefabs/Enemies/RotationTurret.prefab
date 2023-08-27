@@ -233,9 +233,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScript: {fileID: 0}
   bulletPrefab: {fileID: 2856461748329167953, guid: 164f5599a1db9b04daaf590c06e4d721, type: 3}
-  fireRate: 0.25
+  fireRate: 0.5
   fireDelay: 0
-  bulletForce: 20
+  bulletForce: 15
   currTimer: 0
 --- !u!1 &2315843141415500001
 GameObject:
@@ -283,9 +283,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScript: {fileID: 0}
   bulletPrefab: {fileID: 2856461748329167953, guid: 164f5599a1db9b04daaf590c06e4d721, type: 3}
-  fireRate: 0.25
+  fireRate: 0.5
   fireDelay: 0
-  bulletForce: 20
+  bulletForce: 15
   currTimer: 0
 --- !u!1 &4002068034219953817
 GameObject:
@@ -333,9 +333,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScript: {fileID: 0}
   bulletPrefab: {fileID: 2856461748329167953, guid: 164f5599a1db9b04daaf590c06e4d721, type: 3}
-  fireRate: 0.25
+  fireRate: 0.5
   fireDelay: 0
-  bulletForce: 20
+  bulletForce: 15
   currTimer: 0
 --- !u!1 &4185297229882998676
 GameObject:
@@ -383,9 +383,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScript: {fileID: 0}
   bulletPrefab: {fileID: 2856461748329167953, guid: 164f5599a1db9b04daaf590c06e4d721, type: 3}
-  fireRate: 0.25
+  fireRate: 0.5
   fireDelay: 0
-  bulletForce: 20
+  bulletForce: 15
   currTimer: 0
 --- !u!1 &4423488863235788788
 GameObject:

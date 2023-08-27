@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
-  destroyTime: 3
+  destroyTime: 1.5
 --- !u!82 &5498962576863518628
 AudioSource:
   m_ObjectHideFlags: 0
