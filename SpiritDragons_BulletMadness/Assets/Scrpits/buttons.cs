@@ -21,6 +21,11 @@ public class buttons : MonoBehaviour
     public int damageCost;
     public int fireRateCost;
     public int dashCost;
+    int maxHealthUpgrade = 0;
+    int maxDamageUpgrade = 0;
+    int maxFireRateUpgrade = 0;
+    int maxDashUpgrade = 0;
+
 
     private void Start()
     {
@@ -31,6 +36,26 @@ public class buttons : MonoBehaviour
         dashCostText.text = dashCost.ToString("F0");
         playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<playerMovement>();
         shootScript = GameObject.FindGameObjectWithTag("Player").GetComponent<shooting>();
+    }
+
+    private void Update()
+    {
+        if (maxHealthUpgrade == 5)
+        {
+            healthCostText.text = "Max";
+        }
+        if (maxDamageUpgrade == 5)
+        {
+            damageCostText.text = "Max";
+        }
+        if (maxFireRateUpgrade == 5)
+        {
+            fireRateCostText.text = "Max";
+        }
+        if (maxDashUpgrade == 5)
+        {
+            dashCostText.text = "Max";
+        }
     }
 
     public void resume()
@@ -68,54 +93,66 @@ public class buttons : MonoBehaviour
 
     public void upgradeHealth() 
     {
-        if (playerScript.money >= healthCost)
+        if (maxHealthUpgrade < 5)
         {
-            playerScript.money -= healthCost;
-            playerScript.hp += 5;
-            playerScript.hpOrig += 5;
-            PlayerPrefs.SetInt(playerScript.maxHealthKey, playerScript.hpOrig);
-            healthCost += 250;
-            healthCostText.text = healthCost.ToString("F0");
-            playerScript.updatePlayerUI();
+            if (playerScript.money >= healthCost)
+            {
+                playerScript.money -= healthCost;
+                playerScript.hp += 5;
+                playerScript.hpOrig += 5;
+                healthCost += 250;
+                healthCostText.text = healthCost.ToString("F0");
+                playerScript.updatePlayerUI();
+                maxHealthUpgrade++;
+            }
         }
     }
 
     public void upgradeDamage()
     {
-        if (playerScript.money >= damageCost)
+        if (maxDamageUpgrade < 5)
         {
-            playerScript.money -= damageCost;
-            bulletScript.damage += 2;
-            PlayerPrefs.SetInt(playerScript.damageKey ,bulletScript.damage);
-            damageCost += 100;
-            damageCostText.text = damageCost.ToString("F0");
-            playerScript.updatePlayerUI();
+            if (playerScript.money >= damageCost)
+            {
+                playerScript.money -= damageCost;
+                bulletScript.damage++;
+                damageCost += 100;
+                damageCostText.text = damageCost.ToString("F0");
+                playerScript.updatePlayerUI();
+                maxDamageUpgrade++;
+            }
         }
     }
 
     public void upgradeFireRate()
     {
-        if (playerScript.money >= fireRateCost)
+        if (maxFireRateUpgrade < 5)
         {
-            playerScript.money -= fireRateCost;
-            shootScript.fireRate++;
-            PlayerPrefs.SetFloat(playerScript.fireRateKey, shootScript.fireRate);
-            fireRateCost += 75;
-            fireRateCostText.text = fireRateCost.ToString("F0");
-            playerScript.updatePlayerUI();
+            if (playerScript.money >= fireRateCost)
+            {
+                playerScript.money -= fireRateCost;
+                shootScript.fireRate++;
+                fireRateCost += 75;
+                fireRateCostText.text = fireRateCost.ToString("F0");
+                playerScript.updatePlayerUI();
+                maxFireRateUpgrade++;
+            }
         }
     }
 
     public void upgradeDash()
     {
-        if (playerScript.money >= dashCost)
+        if (maxDashUpgrade < 5)
         {
-            playerScript.money -= dashCost;
-            playerScript.dashLength += .25f;
-            PlayerPrefs.SetFloat(playerScript.dashLengthKey, playerScript.dashLength);
-            dashCost += 200;
-            dashCostText.text = dashCost.ToString("F0");
-            playerScript.updatePlayerUI();
+            if (playerScript.money >= dashCost)
+            {
+                playerScript.money -= dashCost;
+                playerScript.dashLength += .025f;
+                dashCost += 200;
+                dashCostText.text = dashCost.ToString("F0");
+                playerScript.updatePlayerUI();
+                maxDashUpgrade++;
+            }
         }
     }
 }

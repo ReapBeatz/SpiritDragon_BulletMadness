@@ -32,6 +32,10 @@ public class advanceCheck : MonoBehaviour
         if (collision.CompareTag("Player") && gameManager.instance.enemiesRemaining <= 0 && tag == "nextLevelCheck")
         {
             PlayerPrefs.SetInt(playerScript.moneyKey, playerScript.money);
+            PlayerPrefs.SetInt(playerScript.maxHealthKey, playerScript.hpOrig);
+            PlayerPrefs.SetInt(playerScript.damageKey, bulletScript.damage);
+            PlayerPrefs.SetFloat(playerScript.fireRateKey, shootScript.fireRate);
+            PlayerPrefs.SetFloat(playerScript.dashLengthKey, playerScript.dashLength);
 
             SceneManager.LoadSceneAsync(nextSceneNum);
         }

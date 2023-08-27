@@ -27,7 +27,7 @@ public class gameManager : MonoBehaviour
     public Image playerShieldBar;
     public int enemiesRemaining;
     public bool isPaused;
-    float timescaleOrig;
+    public float timescaleOrig;
     public bool endGame;
     // Start is called before the first frame update
     void Awake()
@@ -35,7 +35,8 @@ public class gameManager : MonoBehaviour
         instance = this;
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<playerMovement>();
-        timescaleOrig = Time.timeScale;
+        timescaleOrig = 1;
+        Time.timeScale = timescaleOrig;
         playerSpawnPos = GameObject.FindGameObjectWithTag("playerSpawnPos");
     }
 
@@ -64,6 +65,7 @@ public class gameManager : MonoBehaviour
 
     public void GameReset()
     {
+        timescaleOrig = Time.timeScale;
         Time.timeScale = timescaleOrig;
     }
 

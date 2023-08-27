@@ -60,7 +60,7 @@ public class playerMovement : MonoBehaviour , IDamage
         hpOrig = PlayerPrefs.GetInt(maxHealthKey, 25);
         money = PlayerPrefs.GetInt(moneyKey, 0);
         dashLength = PlayerPrefs.GetFloat(dashLengthKey, .1f);
-        gameManager.instance.GameReset();
+        //gameManager.instance.GameReset();
         audioSource = GetComponent<AudioSource>();
         pc = GetComponent<PolygonCollider2D>();
         moveSpeedOrig = moveSpeed;
