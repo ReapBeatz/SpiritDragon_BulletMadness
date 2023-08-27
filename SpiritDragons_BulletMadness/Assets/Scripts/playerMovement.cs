@@ -22,7 +22,7 @@ public class playerMovement : MonoBehaviour , IDamage
 
     float activeMoveSpeed;
     [SerializeField] float dashSpeed;
-    public float dashLength = .5f;
+    public float dashLength;
     [SerializeField] float dashCD = 1f;
     public float dashTimer;
     [SerializeField] float rageCD;
@@ -67,7 +67,7 @@ public class playerMovement : MonoBehaviour , IDamage
         fireRateOrig = shootScript.fireRate;
         activeMoveSpeed = moveSpeed;
         origColor = model.material.color;
-        hpOrig = hp;
+        hp = hpOrig;
         updatePlayerUI();
     }
     // Update is called once per frame

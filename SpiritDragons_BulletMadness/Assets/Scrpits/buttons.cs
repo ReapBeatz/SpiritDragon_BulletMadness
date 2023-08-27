@@ -21,10 +21,6 @@ public class buttons : MonoBehaviour
     public int damageCost;
     public int fireRateCost;
     public int dashCost;
-    int maxHealthUpgrade = 0;
-    int maxDamageUpgrade = 0;
-    int maxFireRateUpgrade = 0;
-    int maxDashUpgrade = 0;
 
 
     private void Start()
@@ -40,19 +36,19 @@ public class buttons : MonoBehaviour
 
     private void Update()
     {
-        if (maxHealthUpgrade == 5)
+        if (playerScript.hpOrig == 50)
         {
             healthCostText.text = "Max";
         }
-        if (maxDamageUpgrade == 5)
+        if (bulletScript.damage == 7)
         {
             damageCostText.text = "Max";
         }
-        if (maxFireRateUpgrade == 5)
+        if (shootScript.fireRate == 8)
         {
             fireRateCostText.text = "Max";
         }
-        if (maxDashUpgrade == 5)
+        if (playerScript.dashLength == 0.225f)
         {
             dashCostText.text = "Max";
         }
@@ -93,7 +89,7 @@ public class buttons : MonoBehaviour
 
     public void upgradeHealth() 
     {
-        if (maxHealthUpgrade < 5)
+        if (playerScript.hpOrig < 50)
         {
             if (playerScript.money >= healthCost)
             {
@@ -103,14 +99,13 @@ public class buttons : MonoBehaviour
                 healthCost += 250;
                 healthCostText.text = healthCost.ToString("F0");
                 playerScript.updatePlayerUI();
-                maxHealthUpgrade++;
             }
         }
     }
 
     public void upgradeDamage()
     {
-        if (maxDamageUpgrade < 5)
+        if (bulletScript.damage < 7)
         {
             if (playerScript.money >= damageCost)
             {
@@ -119,14 +114,13 @@ public class buttons : MonoBehaviour
                 damageCost += 100;
                 damageCostText.text = damageCost.ToString("F0");
                 playerScript.updatePlayerUI();
-                maxDamageUpgrade++;
             }
         }
     }
 
     public void upgradeFireRate()
     {
-        if (maxFireRateUpgrade < 5)
+        if (shootScript.fireRate < 8)
         {
             if (playerScript.money >= fireRateCost)
             {
@@ -135,14 +129,13 @@ public class buttons : MonoBehaviour
                 fireRateCost += 75;
                 fireRateCostText.text = fireRateCost.ToString("F0");
                 playerScript.updatePlayerUI();
-                maxFireRateUpgrade++;
             }
         }
     }
 
     public void upgradeDash()
     {
-        if (maxDashUpgrade < 5)
+        if (playerScript.dashLength < .225f)
         {
             if (playerScript.money >= dashCost)
             {
@@ -151,7 +144,6 @@ public class buttons : MonoBehaviour
                 dashCost += 200;
                 dashCostText.text = dashCost.ToString("F0");
                 playerScript.updatePlayerUI();
-                maxDashUpgrade++;
             }
         }
     }
