@@ -117,7 +117,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
   serializedVersion: 2
-  m_Radius: 15
+  m_Radius: 25
 --- !u!114 &6133783392139694133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,7 +210,7 @@ Transform:
   m_GameObject: {fileID: 8180291342988704275}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.39, y: 0.63849247, z: 0.63849247}
+  m_LocalScale: {x: 0.0468, y: 0.044694472, z: 0.63849247}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9085242276570680592}
@@ -218,7 +218,7 @@ Transform:
   - {fileID: 3275033025632294819}
   - {fileID: 1208341785530277915}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4276444551618922101
 SpriteRenderer:
@@ -261,12 +261,12 @@ SpriteRenderer:
   m_SortingLayerID: 678273239
   m_SortingLayer: 8
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 530444117, guid: 5109540b1639dd24b8c3ea008e18d865, type: 3}
   m_Color: {r: 1, g: 0.55056304, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_DrawMode: 1
+  m_Size: {x: 15, y: 15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -332,18 +332,19 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 2}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.12, y: 0.14}
+    newSize: {x: 15, y: 15}
     adaptiveTilingThreshold: 0.5
-    drawMode: 0
+    drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
+    - - {x: 7.442923, y: 7.413163}
+      - {x: -7.485989, y: 7.6188545}
+      - {x: -7.665334, y: -7.9244733}
+      - {x: 7.792099, y: -7.9244747}
   m_UseDelaunayMesh: 0
 --- !u!50 &3231610334658567285
 Rigidbody2D:

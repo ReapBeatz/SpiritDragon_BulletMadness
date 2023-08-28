@@ -32,12 +32,12 @@ Transform:
   m_GameObject: {fileID: 2177542512531563094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.06, y: -4.49, z: 0}
-  m_LocalScale: {x: 0.68692106, y: 0.8665, z: 0.8665}
+  m_LocalScale: {x: 0.10990737, y: 0.14730501, z: 0.8665}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1832507416586693796}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5245931156478925897
 SpriteRenderer:
@@ -80,12 +80,12 @@ SpriteRenderer:
   m_SortingLayerID: 678273239
   m_SortingLayer: 8
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 1438941525, guid: 6012b55d2bebee84b924a34814fc8b62, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_DrawMode: 1
+  m_Size: {x: 8, y: 8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -158,6 +158,11 @@ MonoBehaviour:
   hasRage: 0
   hasShield: 0
   hurtNum: 0
+  damageKey: Damage
+  fireRateKey: fireRate
+  maxHealthKey: maxHealth
+  moneyKey: money
+  dashLengthKey: dashLength
 --- !u!114 &8632656620994686919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,18 +215,19 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.17}
+    newSize: {x: 8, y: 8}
     adaptiveTilingThreshold: 0.5
-    drawMode: 0
+    drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
+    - - {x: 3.5250885, y: 3.756837}
+      - {x: -3.8609269, y: 3.8208323}
+      - {x: -3.874736, y: -4.0015965}
+      - {x: 3.560141, y: -4.0869455}
   m_UseDelaunayMesh: 0
 --- !u!82 &4614519449486082938
 AudioSource:
