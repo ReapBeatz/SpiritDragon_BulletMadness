@@ -329,7 +329,7 @@ Transform:
   m_GameObject: {fileID: 7054841905258066676}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.08, y: 4.11, z: 0}
-  m_LocalScale: {x: 0.39, y: 0.63849247, z: 0.63849247}
+  m_LocalScale: {x: 0.08189999, y: 0.051079396, z: 0.63849247}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 363923845192865420}
@@ -342,7 +342,7 @@ Transform:
   - {fileID: 2183775599750039210}
   - {fileID: 2222415232329212188}
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6549687740834152596
 SpriteRenderer:
@@ -385,12 +385,12 @@ SpriteRenderer:
   m_SortingLayerID: 678273239
   m_SortingLayer: 8
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 904512, guid: 9abce6d51145e624789f7584b493ecf5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_DrawMode: 1
+  m_Size: {x: 20, y: 20}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -409,6 +409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPos: {fileID: 0}
+  playerScript: {fileID: 0}
   model: {fileID: 6549687740834152596}
   bF:
   - {fileID: 1426484579233977753}
@@ -420,7 +421,10 @@ MonoBehaviour:
   - {fileID: 8978599691506899138}
   - {fileID: 5525486431467713114}
   - {fileID: 7243145326207599052}
+  dashClip: {fileID: 0}
   hp: 75
+  hpOrig: 0
+  HPBar: {fileID: 0}
   stoppingDistance: 2
   retreatDistance: 3
   dashSpeed: 30
@@ -462,18 +466,19 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 2}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.21, y: 0.16}
+    newSize: {x: 20, y: 20}
     adaptiveTilingThreshold: 0.5
-    drawMode: 0
+    drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
+    - - {x: 10.013322, y: 10.087299}
+      - {x: -9.684221, y: 9.8126955}
+      - {x: -9.677857, y: -10.335902}
+      - {x: 9.93104, y: -10.43739}
   m_UseDelaunayMesh: 0
 --- !u!50 &474466060983832753
 Rigidbody2D:

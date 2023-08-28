@@ -4315,6 +4315,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 2347206055489475593, guid: 10ea84f126e3fa44098336954dabd4fb, type: 3}
+      propertyPath: m_DrawMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5804687966176369770, guid: 10ea84f126e3fa44098336954dabd4fb, type: 3}
       propertyPath: m_Name
       value: AquaBoss

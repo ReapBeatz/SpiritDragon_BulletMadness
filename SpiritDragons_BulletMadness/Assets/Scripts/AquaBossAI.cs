@@ -111,7 +111,7 @@ public class AquaBossAI : MonoBehaviour, IDamage
     {
         speed = 6;
         mST.launchTimer = 2;
-        model.material.color = new Color(1f, 0f, 0f, .75f);
+        model.material.color = Color.red;
         foreach (var b in bF)
         {
             b.fireRate = .1f;
