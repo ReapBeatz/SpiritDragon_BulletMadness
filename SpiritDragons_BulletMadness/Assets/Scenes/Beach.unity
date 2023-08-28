@@ -1200,10 +1200,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8623280372060296052, guid: 5e16cfe45b31d274e907c8c855760157, type: 3}
-      propertyPath: m_Radius
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1577,10 +1573,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8623280372060296052, guid: 5e16cfe45b31d274e907c8c855760157, type: 3}
-      propertyPath: m_Radius
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1641,10 +1633,6 @@ PrefabInstance:
     - target: {fileID: 6031745466455302795, guid: 5e16cfe45b31d274e907c8c855760157, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8623280372060296052, guid: 5e16cfe45b31d274e907c8c855760157, type: 3}
-      propertyPath: m_Radius
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -87984,10 +87972,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2525718697646527792, guid: 43a769007f9695047a059b5fef53fa02, type: 3}
-      propertyPath: m_Radius
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 4072318169669178262, guid: 43a769007f9695047a059b5fef53fa02, type: 3}
       propertyPath: m_Name
       value: 5ShotEnemy (2)
@@ -89610,10 +89594,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 981517854}
     m_Modifications:
-    - target: {fileID: 4386440439092175597, guid: 073589a7a3030ee47b338dba3c3ca3f1, type: 3}
-      propertyPath: m_Radius
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 8180291342988704275, guid: 073589a7a3030ee47b338dba3c3ca3f1, type: 3}
       propertyPath: m_Name
       value: BurstEnemy
@@ -89722,10 +89702,6 @@ PrefabInstance:
     - target: {fileID: 6031745466455302795, guid: 5e16cfe45b31d274e907c8c855760157, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8623280372060296052, guid: 5e16cfe45b31d274e907c8c855760157, type: 3}
-      propertyPath: m_Radius
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -92812,10 +92788,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 981517854}
     m_Modifications:
-    - target: {fileID: 4386440439092175597, guid: 073589a7a3030ee47b338dba3c3ca3f1, type: 3}
-      propertyPath: m_Radius
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 8180291342988704275, guid: 073589a7a3030ee47b338dba3c3ca3f1, type: 3}
       propertyPath: m_Name
       value: BurstEnemy (1)
@@ -92920,10 +92892,6 @@ PrefabInstance:
     - target: {fileID: 172768364114559575, guid: 43a769007f9695047a059b5fef53fa02, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2525718697646527792, guid: 43a769007f9695047a059b5fef53fa02, type: 3}
-      propertyPath: m_Radius
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4072318169669178262, guid: 43a769007f9695047a059b5fef53fa02, type: 3}
       propertyPath: m_Name
@@ -93264,10 +93232,6 @@ PrefabInstance:
     - target: {fileID: 172768364114559575, guid: 43a769007f9695047a059b5fef53fa02, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2525718697646527792, guid: 43a769007f9695047a059b5fef53fa02, type: 3}
-      propertyPath: m_Radius
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4072318169669178262, guid: 43a769007f9695047a059b5fef53fa02, type: 3}
       propertyPath: m_Name
