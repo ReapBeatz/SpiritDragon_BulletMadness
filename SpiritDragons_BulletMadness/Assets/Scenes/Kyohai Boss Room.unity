@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &69089354 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4325334100565900227, guid: 3b1b3b20e6b103741add4af5ae0de9a1, type: 3}
+  m_PrefabInstance: {fileID: 1572850403}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c190778487683b0499f92e62aeec2f4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &257754350
 GameObject:
   m_ObjectHideFlags: 0
@@ -37645,6 +37656,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &900823864 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7243145326207599052, guid: 3b1b3b20e6b103741add4af5ae0de9a1, type: 3}
+  m_PrefabInstance: {fileID: 1572850403}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c190778487683b0499f92e62aeec2f4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &941009035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42170,6 +42192,38 @@ PrefabInstance:
       propertyPath: playerScript
       value: 
       objectReference: {fileID: 1864633967}
+    - target: {fileID: 8654271370041079398, guid: 3b1b3b20e6b103741add4af5ae0de9a1, type: 3}
+      propertyPath: bF.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654271370041079398, guid: 3b1b3b20e6b103741add4af5ae0de9a1, type: 3}
+      propertyPath: bF.Array.data[1]
+      value: 
+      objectReference: {fileID: 69089354}
+    - target: {fileID: 8654271370041079398, guid: 3b1b3b20e6b103741add4af5ae0de9a1, type: 3}
+      propertyPath: bF.Array.data[2]
+      value: 
+      objectReference: {fileID: 900823864}
+    - target: {fileID: 8654271370041079398, guid: 3b1b3b20e6b103741add4af5ae0de9a1, type: 3}
+      propertyPath: bF.Array.data[3]
+      value: 
+      objectReference: {fileID: 900823864}
+    - target: {fileID: 8654271370041079398, guid: 3b1b3b20e6b103741add4af5ae0de9a1, type: 3}
+      propertyPath: bF.Array.data[4]
+      value: 
+      objectReference: {fileID: 900823864}
+    - target: {fileID: 8654271370041079398, guid: 3b1b3b20e6b103741add4af5ae0de9a1, type: 3}
+      propertyPath: bF.Array.data[5]
+      value: 
+      objectReference: {fileID: 900823864}
+    - target: {fileID: 8654271370041079398, guid: 3b1b3b20e6b103741add4af5ae0de9a1, type: 3}
+      propertyPath: bF.Array.data[6]
+      value: 
+      objectReference: {fileID: 900823864}
+    - target: {fileID: 8654271370041079398, guid: 3b1b3b20e6b103741add4af5ae0de9a1, type: 3}
+      propertyPath: bF.Array.data[7]
+      value: 
+      objectReference: {fileID: 900823864}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
